@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<interface>
+  <object class="GtkUIManager" id="uimanager1">
+    <child>
+      <object class="GtkActionGroup" id="actiongroup1">
+        <child>
+          <object class="GtkAction" id="gMenuFile">
+            <property name="name">gMenuFile</property>
+            <property name="label" translatable="yes">_File</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="gMenuFileQuit">
+            <property name="stock_id">gtk-quit</property>
+            <property name="name">gMenuFileQuit</property>
+            <signal handler="destroy_callback" name="activate"/>
+          </object>
+        </child>
+      </object>
+    </child>
+    <ui>
+      <menubar name="gMenu">
+        <menu action="gMenuFile">
+          <menuitem action="gMenuFileQuit"/>
+        </menu>
+      </menubar>
+    </ui>
+  </object>
+  <!-- interface-requires gtk+ 2.16 -->
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkWindow" id="gWindow">
+    <property name="width_request">640</property>
+    <property name="height_request">480</property>
+    <property name="title" translatable="yes">Graphics Sample 1 - Cube</property>
+    <signal handler="destroy_callback" name="destroy"/>
+    <signal handler="key_press_callback" name="key_press_event"/>
+    <signal handler="key_release_callback" name="key_release_event"/>
+    <child>
+      <object class="GtkVBox" id="vbox1">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkMenuBar" constructor="uimanager1" id="gMenu">
+            <property name="visible">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkDrawingArea" id="gViewport">
+            <property name="visible">True</property>
+            <signal handler="expose_callback" name="expose_event"/>
+            <signal handler="viewport_configure_callback" name="configure_event"/>
+            <signal handler="viewport_size_allocate_callback" name="size_allocate"/>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
