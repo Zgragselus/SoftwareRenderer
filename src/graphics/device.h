@@ -6,7 +6,11 @@
 #include "gfx.h"
 
 // Shader attribute structure 
+#ifndef WINDOWS
 struct __attribute__((aligned(16))) shd_attribs
+#else
+struct __declspec(align(16)) shd_attribs
+#endif
 {
 	float4 *attribute[4];
 	size_t attribute_step[4];
@@ -15,7 +19,11 @@ struct __attribute__((aligned(16))) shd_attribs
 extern struct shd_attribs _dev_shader_attribs;
 
 // Shader varying structure
+#ifndef WINDOWS
 struct __attribute__((aligned(16))) shd_varying
+#else
+struct __declspec(align(16)) shd_varying
+#endif
 {
 	float4 varyings[4];
 };
@@ -23,7 +31,11 @@ struct __attribute__((aligned(16))) shd_varying
 extern struct shd_varying _dev_shader_varyings;
 
 // Shader output structure
+#ifndef WINDOWS
 struct __attribute__((aligned(16))) shd_output
+#else
+struct __declspec(align(16)) shd_output
+#endif
 {
 	float4 color;
 	float depth;

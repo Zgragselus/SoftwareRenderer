@@ -1,0 +1,11 @@
+prefix=C:/gtk-build/build/x64/release/gtk3-rel
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: Gail
+Description: GNOME Accessibility Implementation Library
+Version: 3.22.3
+Requires: atk gtk+-3.0
+Libs: -L${libdir} -lgailutil-3.0
+Cflags: -I${includedir}/gail-3.0

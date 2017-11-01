@@ -6,7 +6,11 @@
 
 /* Simple floating point packed-4D-vector structure */
 // This is needed, because we can't use anonymous structures in C99
+#ifndef WINDOWS
 typedef struct __attribute__((aligned(16)))
+#else
+typedef struct __declspec(align(16))
+#endif
 {
 	float x, y, z, w;
 }
@@ -14,7 +18,11 @@ float4_f;
 
 /* Float4 structure */
 // Just a union of our packed-4D-vector structure and SSE __m128 C data type
-typedef union __attribute__((aligned(16))) 
+#ifndef WINDOWS
+typedef union __attribute__((aligned(16)))
+#else
+typedef union __declspec(align(16))
+#endif
 {
 	float4_f fp;
 	__m128 xmm;

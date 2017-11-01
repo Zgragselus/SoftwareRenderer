@@ -1,8 +1,8 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 
-#include <gtk-2.0/gtk/gtk.h>
-#include <gtk-2.0/gtk/gtkgl.h>
+#include <gtk/gtk.h>
+#include <gdk/gdk.h>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,8 +11,12 @@
 
 #include <assert.h>
 
+#ifndef WINDOWS
 #include <pthread.h>
 #include <unistd.h>
+#else
+#include <Windows.h>
+#endif
 
 #include <GL/gl.h>
 #include <GL/glu.h>

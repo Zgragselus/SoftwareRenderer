@@ -1,0 +1,13 @@
+prefix=C:/gtk-build/build/x64/release/gtk3-rel
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+targets=win32
+
+Name: GDK
+Description: GTK+ Drawing Kit
+Version: 3.22.3
+Requires: gio-2.0 >= 2.45.8 pangowin32 pangocairo gdk-pixbuf >= 2.30.0 cairo >= 1.14.0 cairo-gobject >= 1.14.0
+Requires.private: gio-2.0 >= 2.45.8 cairo-win32
+Libs: -L${libdir} -lgdk-3.0 -lgdi32 -limm32 -lshell32 -lole32 -Wl,-luuid -lwinmm -ldwmapi
+Cflags: -I${includedir}/gtk-3.0 

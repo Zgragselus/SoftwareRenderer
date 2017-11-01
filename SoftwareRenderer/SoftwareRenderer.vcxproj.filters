@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\main.c" />
+    <ClCompile Include="..\src\textures\tex.c">
+      <Filter>textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\textures\tga.c">
+      <Filter>textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math\float4.c">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math\mat4.c">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\graphics\buffer.c">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\graphics\clear.c">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\graphics\device.c">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\graphics\error.c">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\graphics\framebuffer.c">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\graphics\shader.c">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\graphics\texture.c">
+      <Filter>graphics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\main.h" />
+    <ClInclude Include="..\src\shaders.h" />
+    <ClInclude Include="..\src\textures\tex.h">
+      <Filter>textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\textures\tga.h">
+      <Filter>textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math\float4.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math\mat4.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\memory\memory.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\graphics\buffer.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\graphics\clear.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\graphics\device.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\graphics\error.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\graphics\framebuffer.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\graphics\gfx.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\graphics\shader.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\graphics\texture.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="graphics">
+      <UniqueIdentifier>{41f30c3a-61cf-44b4-ae1d-ed1cb7abeb40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="memory">
+      <UniqueIdentifier>{8a661ebd-3947-48aa-bcfc-96e6d3049877}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{c67f4176-8b87-469b-bc56-277e3a1e002a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="textures">
+      <UniqueIdentifier>{d4e85308-53ee-4602-a956-910325ab8fc3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

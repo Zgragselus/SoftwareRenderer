@@ -20,7 +20,7 @@ void tgaLoadFile(const char* mPath, tex_t** result)
 	fread(&(header->pixel_depth), sizeof(unsigned char), 1, f);
 	fread(&(header->image_desc), sizeof(unsigned char), 1, f);
 	
-	unsigned char* data;
+	unsigned char* data = 0;
 	
 	switch(header->image_type)
 	{

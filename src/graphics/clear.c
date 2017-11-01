@@ -20,7 +20,7 @@ void gfxClear()
 		
 		while(total > 0)
 		{
-			memcpy(framebuffers[framebuffer_active].color_attachment->data + done, color_attachment, color_attachment_size);
+			memcpy((unsigned char*)(framebuffers[framebuffer_active].color_attachment->data) + done, color_attachment, color_attachment_size);
 			done += color_attachment_size;
 			total -= color_attachment_size;
 		}
@@ -33,7 +33,7 @@ void gfxClear()
 		
 		while(total > 0)
 		{
-			memcpy(framebuffers[framebuffer_active].depth_attachment->data + done, depth_attachment, depth_attachment_size);
+			memcpy((unsigned char*)(framebuffers[framebuffer_active].depth_attachment->data) + done, depth_attachment, depth_attachment_size);
 			done += depth_attachment_size;
 			total -= depth_attachment_size;
 		}

@@ -3,12 +3,17 @@
 
 #include <xmmintrin.h>
 #include <emmintrin.h>
+#include <math.h>
 
 #include "float4.h"
 
 /* Matrix packed 4-row structure */
 // This is needed, because we can't use anonymous structures in C99
+#ifndef WINDOWS
 typedef struct __attribute__((aligned(16)))
+#else
+typedef struct __declspec(align(16))
+#endif
 {
 	__m128 m1;
 	__m128 m2;
@@ -19,7 +24,11 @@ mat4_f;
 
 /* Mat4 structure */
 // Just a union of our packed 4-row structure and 4 item SSE __m128 array C data type
-typedef union __attribute__((aligned(16))) 
+#ifndef WINDOWS
+typedef union __attribute__((aligned(16)))
+#else
+typedef union __declspec(align(16))
+#endif
 {
 	mat4_f fp;
 	__m128 m[4];

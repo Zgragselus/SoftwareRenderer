@@ -1,60 +1,22 @@
-<?xml version="1.0"?>
-<glade-interface>
-  <!-- interface-requires gtk+ 2.16 -->
-  <!-- interface-naming-policy project-wide -->
-  <widget class="GtkWindow" id="gWindow">
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkWindow" id="window1">
     <property name="width_request">640</property>
     <property name="height_request">480</property>
-    <property name="title" translatable="yes">Graphics Sample 1 - Cube</property>
-    <signal name="destroy" handler="destroy_callback"/>
-    <signal name="key_press_event" handler="key_press_callback"/>
-    <signal name="key_release_event" handler="key_release_callback"/>
+    <property name="can_focus">False</property>
     <child>
-      <widget class="GtkVBox" id="vbox1">
+      <object class="GtkBox" id="box1">
         <property name="visible">True</property>
+        <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
+        <signal name="destroy-event" handler="destroy_callback" swapped="no"/>
+        <signal name="key-release-event" handler="key_release_callback" swapped="no"/>
+        <signal name="key-press-event" handler="key_press_callback" swapped="no"/>
         <child>
-          <widget class="GtkMenuBar" id="gMenu">
-            <property name="visible">True</property>
-            <child>
-              <widget class="GtkMenuItem" id="gMenuFile">
-                <property name="visible">True</property>
-                <property name="label" translatable="yes">_File</property>
-                <property name="use_underline">True</property>
-                <child>
-                  <widget class="GtkMenu" id="menu1">
-                    <property name="visible">True</property>
-                    <child>
-                      <widget class="GtkImageMenuItem" id="gMenuFileQuit">
-                        <property name="label">gtk-quit</property>
-                        <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <signal name="activate" handler="destroy_callback"/>
-                      </widget>
-                    </child>
-                  </widget>
-                </child>
-              </widget>
-            </child>
-          </widget>
-          <packing>
-            <property name="expand">False</property>
-            <property name="position">0</property>
-          </packing>
+          <placeholder/>
         </child>
-        <child>
-          <widget class="GtkDrawingArea" id="gViewport">
-            <property name="visible">True</property>
-            <signal name="expose_event" handler="expose_callback"/>
-            <signal name="configure_event" handler="viewport_configure_callback"/>
-            <signal name="size_allocate" handler="viewport_size_allocate_callback"/>
-          </widget>
-          <packing>
-            <property name="position">1</property>
-          </packing>
-        </child>
-      </widget>
+      </object>
     </child>
-  </widget>
-</glade-interface>
+  </object>
+</interface>
